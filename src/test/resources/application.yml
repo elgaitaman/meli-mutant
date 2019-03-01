@@ -1,0 +1,18 @@
+server:
+  servlet:
+    contextPath : /
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    
+management.endpoints.web.base-path:
+
+---
+spring:
+  profiles:  
+    active: test
+  data:
+    mongodb:
+      uri: mongodb://localhost:12345
+      database: embedded
+      

@@ -1,0 +1,34 @@
+server:
+  servlet:
+    contextPath : /
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    
+management.endpoints.web.base-path:
+
+---
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mutantz
+
+---
+spring:
+  profiles: mlab
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      database: ${MONGO_DB}
+  
+---
+spring:
+  profiles: test 
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017
+      database: mutantz
+      
